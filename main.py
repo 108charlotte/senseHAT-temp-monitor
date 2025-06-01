@@ -1,4 +1,5 @@
 from sense_hat import SenseHat
+import time
 
 sense = SenseHat()
 
@@ -17,6 +18,7 @@ def get_color_from_temperature(temp):
     else:
         return (255, 0, 0)  # red
 
-cpu_temp = get_cpu_temperature()
-
-sense.clear(get_color_from_temperature(cpu_temp))
+while True: 
+    cpu_temp = get_cpu_temperature()
+    sense.clear(get_color_from_temperature(cpu_temp))
+    time.sleep(2)
